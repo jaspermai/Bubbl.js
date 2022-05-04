@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Bubbl.js</title>
+        <link rel="shortcut icon" type="image/png" href="assets/icon.png"/>
+
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Days+One&family=Inter:wght@200;400;600&display=swap" rel="stylesheet">
+
+        <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script defer type="text/javascript" src='bubbl_library/bubbl.js'></script>
+        <link rel="stylesheet" type="text/css" href="bubbl_library/bubbl.css">
+    </head>
+    <body>
+        <div class="hero">
+            <video autoplay muted loop id="hero-video">
+                <source src="assets/main_vid.mp4" type="video/mp4">
+            </video>
+                <div class="hero-main">
+                    <div class="hero-main-subtitle">
+                        For Businesses. For Creators. For You.
+                    </div>
+                    <div class="hero-main-title">
+                        BUBBL.js
+                    </div>
+                    <div class="hero-main-tagline">
+                        Videos for Everyone
+                    </div>
+                </div>
+                <div class="hero-description">
+                    Bubbl is a JavaScript Library that packages videos into interactive bubbles that float on the screen. 
+                    It allows for engaging viewing of promotional videos and allows for easy linking to external sites. 
+                </div>
+                <div class="hero-buttons">
+                    <a class="hero-button" href="home.html">
+                        Home
+                    </a>
+                    <a  class="hero-button" href="documentation.html">
+                        Documentation
+                    </a>
+                    <a class="hero-button" href="gettingStarted.html">
+                        Getting Started
+                    </a>
+                    <a href="https://github.com/csc309-winter-2022/js-library-maijaspe" target="_blank">
+                        <img src="assets/github.png" alt="Github" width="50" height="50">
+                    </a>
+                </div>
+                <svg class="arrows">
+                    <path class="a1" d="M0 0 L30 32 L60 0"></path>
+                    <path class="a2" d="M0 20 L30 52 L60 20"></path>
+                    <path class="a3" d="M0 40 L30 72 L60 40"></path>
+                </svg>
+            </div>
+        <!-- Business Block -->
+        <div class="block" style="background: linear-gradient(180deg, #8DE8C2 0%, #D2E7DE 56.25%, rgba(210, 231, 222, 0) 100%);">
+            <div class="block-title" style="text-align: left">
+                FOR BUSINESSES
+            </div>
+            <div class="block-description" style="text-align: left">
+                Use Bubbl’s interactive design to create more captivating ads. 
+                Wrap your promotional videos and link your product’s shop, company’s website, and more.
+                Try interacting with the sample products below!
+            </div>
+            <pre style="background-color: #75ddb0">
+                <code>
+        const vidCanvas = new VideoCanvas('block-business', undefined, undefined, undefined, undefined);
+
+        vidCanvas.makeCanvas();
+        
+        vidCanvas.addVideo('iphone13', 'examples/vids-business/iphone13.mp4', 'large', 0.8);
+        vidCanvas.addVideo('ipadair', 'examples/vids-business/ipadair.mp4', 'medium', 0.8);
+        vidCanvas.addVideo('galaxys22', 'examples/vids-business/galaxys22.mp4', 'large', 0.7);
+        vidCanvas.addVideo('galaxybuds', 'examples/vids-business/galaxybuds.mp4', 'small');
+        vidCanvas.addVideo('surface', 'examples/vids-business/surface.mp4', 'large', 0.6); 
+        
+        vidCanvas.videoLink('iphone13', 'https://www.apple.com/ca/iphone-13/');
+        vidCanvas.videoLink('ipadair', 'https://www.apple.com/ca/ipad-air/');
+        vidCanvas.videoLink('galaxys22', 'https://www.samsung.com/ca/smartphones/galaxy-s22/');
+        vidCanvas.videoLink('galaxybuds', 'https://www.samsung.com/ca/audio-sound/galaxy-buds/');
+        vidCanvas.videoLink('surface', 'https://www.microsoft.com/en-ca/surface');
+                </code>
+            </pre>
+            <div class="block-bubbl" id="block-business">
+                <script defer type="text/javascript" src='examples/example_business.js'></script>
+            </div>
+        </div>
+        <!-- Creator Block -->
+        <div class="block" style="background: linear-gradient(180deg, #F4BCF5 0%, #E6D2E7 57.81%, rgba(230, 210, 231, 0) 100%);">
+            <div class="block-title" style="text-align: right; margin-left: auto;">
+                FOR CREATORS
+            </div>
+            <div class="block-description" style="text-align: right; margin-left: auto;">
+                Use Bubbl’s interactive design to present your creative portfolio. 
+                Showcase your best designs and creations with Bubbl videos and link your audience to your platforms.
+                Try interacting with some of my own Youtube montages!
+            </div>
+            <pre style="background-color: #e2a2e5">
+                <code>
+        const vidCanvas2 = new VideoCanvas('block-creator');
+
+        vidCanvas2.makeCanvas();
+        
+        vidCanvas2.addVideo('vid1', 'examples/vids-creator/youtube1.mp4', 'medium', 0.8);
+        vidCanvas2.addVideo('vid2', 'examples/vids-creator/youtube2.mp4', 'small', 0.8);
+        vidCanvas2.addVideo('vid4', 'examples/vids-creator/youtube4.mp4', 'large', 0.7);
+        vidCanvas2.addVideo('vid3', 'examples/vids-creator/youtube3.mp4');
+        
+        vidCanvas2.videoLink('vid1', 'https://www.youtube.com/watch?v=KEZgBQI9U4g');
+        vidCanvas2.videoLink('vid2', 'https://www.youtube.com/watch?v=lvedfTwJCCU');
+        vidCanvas2.videoLink('vid4', 'https://www.youtube.com/watch?v=qPT-Y00_HlE');
+        vidCanvas2.videoLink('vid3', 'https://www.youtube.com/watch?v=9pWPK65e1EE');
+                </code>
+            </pre>
+            <div class="block-bubbl" id="block-creator">
+                <script defer type="text/javascript" src='examples/example_creator.js'></script>
+            </div>
+        </div>
+        <!-- Personal Block -->
+        <div class="block" style="background: linear-gradient(180deg, #B2E6F7 0%, rgba(210, 226, 231, 0.844444) 64.58%, rgba(210, 226, 231, 0) 100%);">
+            <div class="block-title" style="text-align: left">
+                FOR YOURSELF
+            </div>
+            <div class="block-description" style="text-align: left">
+                Use Bubbl’s interactive design however you want, whenever you want. Bubbl is a perfect way to store your memories all together. 
+                Check out some of these nice home videos.
+            </div>
+            <pre style="background-color: #afd5e1">
+                <code>
+        const vidCanvas3 = new VideoCanvas('block-personal', undefined, undefined, undefined, false);
+
+        vidCanvas3.makeCanvas();
+        
+        vidCanvas3.addVideo('dogs', 'examples/vids-personal/dogs.mp4', 'large');
+        vidCanvas3.addVideo('soccer', 'examples/vids-personal/soccer.mp4', 'large', 0);
+        vidCanvas3.addVideo('sunset', 'examples/vids-personal/sunset.mp4', 'large', 0.2);
+                </code>
+            </pre>
+            <div class="block-bubbl" id="block-personal">
+                <script defer type="text/javascript" src='examples/example_personal.js'></script>
+            </div>
+        </div>
+    
+    </body>
+
+</html>

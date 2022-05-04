@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Bubbl.js</title>
+        <link rel="shortcut icon" type="image/png" href="assets/icon.png"/>
+
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" type="text/css" href="bubbl_library/bubbl.css">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Days+One&family=Inter:wght@200;400;600&display=swap" rel="stylesheet">
+
+        <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script defer type="text/javascript" src='bubbl_library/bubbl.js'></script>
+    </head>
+    <body>
+        <div class="hero">
+            <video autoplay muted loop id="hero-video">
+                <source src="assets/main_vid.mp4" type="video/mp4">
+            </video>
+            <div class="hero-main">
+                <div class="hero-main-subtitle">
+                    For Businesses. For Creators. For You.
+                </div>
+                <div class="hero-main-title">
+                    BUBBL.js
+                </div>
+                <div class="hero-main-tagline">
+                    Videos for Everyone
+                </div>
+            </div>
+            <div class="hero-description">
+                Bubbl is a JavaScript Library that packages videos into interactive bubbles that float on the screen. 
+                It allows for engaging viewing of promotional videos and allows for easy linking to external sites. 
+            </div>
+            <div class="hero-buttons">
+                <a class="hero-button" href="home.html">
+                    Home
+                </a>
+                <a  class="hero-button" href="documentation.html">
+                    Documentation
+                </a>
+                <a class="hero-button" href="gettingStarted.html">
+                    Getting Started
+                </a>
+                <a href="https://github.com/csc309-winter-2022/js-library-maijaspe" target="_blank">
+                    <img src="assets/github.png" alt="Github" width="50" height="50">
+                </a>
+            </div>
+            <svg class="arrows">
+                <path class="a1" d="M0 0 L30 32 L60 0"></path>
+                <path class="a2" d="M0 20 L30 52 L60 20"></path>
+                <path class="a3" d="M0 40 L30 72 L60 40"></path>
+            </svg>
+        </div>
+        <div class="documentation">
+            <div class="block-title">
+                API DOCUMENTATION
+            </div>
+            <div class="documentation-content">
+                <h1>
+                    VideoCanvas
+                </h1>
+                <p>
+                    A video canvas represents a fixed canvas on the screen that will hold related videos. 
+                    Each VideoCanvas object will have its own functions to create video bubbles, add links, and remove video bubbles. 
+                    There can be multiple video canvases on one webpage, as demonstrated in the home page examples.
+                </p>
+                <h2>
+                    Type Parameters
+                </h2>
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Default</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td>divIdName</td>
+                        <td>String</td>
+                        <td><code>body</code></td>
+                        <td>An existing ID of the div that you want to create the VideoCanvas in. 
+                            <i>(ie. to create a VideoCanvas inside of a div with <code>id="block"</code>, 
+                            you should pass in "block")</i></td>
+                    </tr>
+                    <tr>
+                        <td>width</td>
+                        <td>String</td>
+                        <td><code>'100%'</code></td>
+                        <td>Width of the VideoCanvas that encapsulates the videos.</td>
+                    </tr>
+                    <tr>
+                        <td>height</td>
+                        <td>String</td>
+                        <td><code>'100%'</code></td>
+                        <td>Height of the VideoCanvas that encapsulates the videos.</td>
+                    </tr>
+                    <tr>
+                        <td>color</td>
+                        <td>String</td>
+                        <td><code>'transparent'</code></td>
+                        <td>Background color of the VideoCanvas. Takes in standard color codes.</td>
+                    </tr>
+                    <tr>
+                        <td>isFilter</td>
+                        <td>Boolean</td>
+                        <td><code>true</code></td>
+                        <td>Determines if you want the videos in the VideoCanvas 
+                            to have a tinted filter overlay. The tinted filter gives a more animated bubble look.</td>
+                    </tr>
+                </table>
+                <h2>
+                    Constructor
+                </h2>
+                <p>
+                    Create a VideoCanvas by calling the VideoCanvas constructor.
+                </p>
+                <pre>
+                    <code>
+            new VideoCanvas(divIdName, width, height, color, isFilter)</code>
+                </pre>
+                <h2>
+                    Constructor Examples
+                </h2>
+                <pre>
+                    <code>
+            const vidCanvas = new VideoCanvas('video-block', ‘80%’, ‘900px’, ‘#75ddb0’, true)
+            const vidCanvas2 = new VideoCanvas('second-block')</code>
+                </pre>
+
+                <h1>
+                    Functions
+                </h1>
+                <p>
+                    After creating a Video Canvas object, you can access its several functions to insert and customize your videos.
+                </p>
+                <h2>
+                    addVideo
+                </h2>
+                <ul>
+                    <li><b>description:</b> Adds a new video bubble with videoId to your VideoCanvas. 
+                        This video will be fully interactive in standard bubble mode and full-screen mode.</li>
+                    <li><b>return value:</b> <code>void</code></li>
+                    <li>
+                        <b>arguments:</b>
+                        <table>
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Default</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td>videoId</td>
+                                <td>String</td>
+                                <td><b>REQUIRED</b></td>
+                                <td>A new, unique id to access your video bubble.</td>
+                            </tr>
+                            <tr>
+                                <td>src</td>
+                                <td>String</td>
+                                <td><b>REQUIRED</b></td>
+                                <td>The file path to your video.</td>
+                            </tr>
+                            <tr>
+                                <td>videoSize</td>
+                                <td>String: {<code>'small', 'medium', 'large'</code>}</td>
+                                <td><code>'medium'</code></td>
+                                <td>A control variable that decides the size of the video bubble. Possible options are ‘small’, ‘medium’ and ‘large’.</td>
+                            </tr>
+                            <tr>
+                                <td>videoVolume</td>
+                                <td>Number: [<code>0,1</code>]</td>
+                                <td><code>1</code></td>
+                                <td>A control variable that decides the adjusted volume of the video. Possible options are decimal values between 0 and 1, inclusive.</td>
+                            </tr>
+                        </table>
+                    </li>
+                    <li>
+                        <b>examples:</b>
+                        <pre>
+                            <code>
+                vidCanvas.addVideo('vid1', 'examples/vids-creator/youtube1.mp4', 'medium', 0.8)
+                vidCanvas.addVideo('vid3', 'examples/vids-creator/youtube3.mp4')</code>
+                        </pre>
+                    </li>
+                </ul>
+                <h2>
+                    videoLink
+                </h2>
+                <ul>
+                    <li><b>description:</b> Attaches a video link that is directly accessible through the video bubble.
+                        This link should be associated with the video.</li>
+                    <li><b>return value:</b> <code>void</code></li>
+                    <li>
+                        <b>arguments:</b>
+                        <table>
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Default</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td>videoId</td>
+                                <td>String</td>
+                                <td><b>REQUIRED</b></td>
+                                <td>An existing id of the video bubble that you want to attach an external link to.</td>
+                            </tr>
+                            <tr>
+                                <td>url</td>
+                                <td>String</td>
+                                <td><b>REQUIRED</b></td>
+                                <td>The external link that will be  attached to the video bubble.</td>
+                            </tr>
+                        </table>
+                    </li>
+                    <li>
+                        <b>examples:</b>
+                        <pre>
+                            <code>
+                vidCanvas.videoLink('vid1', 'https://www.youtube.com/watch?v=qPT-Y00_HlE')</code>
+                        </pre>
+                    </li>
+                </ul>
+                <h2>
+                    removeVideo
+                </h2>
+                <ul>
+                    <li><b>description:</b> Removes an existing video bubble with videoId from the VideoCanvas.</li>
+                    <li><b>return value:</b> <code>void</code></li>
+                    <li>
+                        <b>arguments:</b>
+                        <table>
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Default</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td>videoId</td>
+                                <td>String</td>
+                                <td><b>REQUIRED</b></td>
+                                <td>An existing id of the video bubble that you want to remove.</td>
+                            </tr>
+                        </table>
+                    </li>
+                    <li>
+                        <b>examples:</b>
+                        <pre>
+                            <code>
+                vidCanvas.removeVideo('vid1')</code>
+                        </pre>
+                    </li>
+                </ul>
+
+                <h1>
+                    Interactive Features
+                </h1>
+                <p>
+                    Here are a few of the interactive features that Bubbl.js provides.
+                </p>
+                <ul>
+                    <li>
+                        Standard Bubble Mode
+                        <ul>
+                            <li>Play on hover, pause off hover</li>
+                            <li>Open link on clicking link icon</li>
+                            <li>Mute/umute on clicking mute icon</li>
+                            <li>Expand to Full-Screen Mode on clicking the video bubble</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Full-Screen Mode
+                        <ul>
+                            <li>Play/pause on clicking play/pause buttons</li>
+                            <li>Open link on clicking link icon</li>
+                            <li>Mute/unmute on clicking mute icon</li>
+                            <li>Restart video from the beginning on clicking restart icon</li>
+                            <li>Revert back to Standard Bubble Mode on clicking outside the video</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Additional Aesthetic Features
+                        <ul>
+                            <li>Subtle video bubble bounce animation</li>
+                            <li>Subtle glow around video bubble</li>
+                            <li>Blur around video screen in Full-Screen Mode</li>
+                            <li>Disable scroll in Full-Screen Mode</li>
+                            <li>Subtle CSS indicator changes upon hover of icons and video bubbles</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h2>Enjoy Bubbl.js!</h2>
+            
+            
+            
+            </div>
+        </div>
+    </body>
+
+</html>

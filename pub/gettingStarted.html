@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Bubbl.js</title>
+        <link rel="shortcut icon" type="image/png" href="assets/icon.png"/>
+
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" type="text/css" href="bubbl_library/bubbl.css">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Days+One&family=Inter:wght@200;400;600&display=swap" rel="stylesheet">
+
+        <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script defer type="text/javascript" src='bubbl_library/bubbl.js'></script>
+    </head>
+    <body>
+        <div class="hero">
+            <video autoplay muted loop id="hero-video">
+                <source src="assets/main_vid.mp4" type="video/mp4">
+            </video>
+            <div class="hero-main">
+                <div class="hero-main-subtitle">
+                    For Businesses. For Creators. For You.
+                </div>
+                <div class="hero-main-title">
+                    BUBBL.js
+                </div>
+                <div class="hero-main-tagline">
+                    Videos for Everyone
+                </div>
+            </div>
+            <div class="hero-description">
+                Bubbl.js is a JavaScript Library that packages videos into interactive bubbles that float on the screen. 
+                It allows for engaging viewing of promotional videos and allows for easy linking to external sites. 
+            </div>
+            <div class="hero-buttons">
+                <a class="hero-button" href="home.html">
+                    Home
+                </a>
+                <a  class="hero-button" href="documentation.html">
+                    Documentation
+                </a>
+                <a class="hero-button" href="gettingStarted.html">
+                    Getting Started
+                </a>
+                <a href="https://github.com/csc309-winter-2022/js-library-maijaspe" target="_blank">
+                    <img src="assets/github.png" alt="Github" width="50" height="50">
+                </a>
+            </div>
+            <svg class="arrows">
+                <path class="a1" d="M0 0 L30 32 L60 0"></path>
+                <path class="a2" d="M0 20 L30 52 L60 20"></path>
+                <path class="a3" d="M0 40 L30 72 L60 40"></path>
+            </svg>
+        </div>
+        <div class="documentation">
+            <div class="block-title">
+                GETTING STARTED
+            </div>
+            <div class="documentation-content">
+                <p>
+                    It's very simple to set up Bubbl.js and have it working with your own videos. Let’s get started.
+                </p>
+                <h1>
+                    Installation
+                </h1>
+                <p>
+                    Install Bubbl.js by downloading the <a href="assets/bubbl_library.zip" class="link" download>bubbl_library zip folder</a>. Make sure you are extracting all of its files into 
+                    the same level directory (folder) as your HTML files for easy navigation. Inside this zip folder you will find:
+                </p>
+                <ul>
+                    <li><b>bubbl.js -</b> the main JS file containing the object definitions and functions used for Bubbl</li>
+                    <li><b>bubbl.css -</b> the main CSS styling file for Bubbl objects</li>
+                    <li><b>assets -</b> a folder containing icons used by Bubbl</li>
+                </ul>
+
+                <h1>
+                    Integration
+                </h1>
+                <p>
+                    Bubbl.js uses the JavaScript language and the JQuery JS Library.  Add the following code snippet in the <code>head</code> tag of your 
+                    HTML code to integrate Bubbl.js and JQuery into your app. <i>(note that the JQuery script comes before the Bubbl script for dependence reasons)</i>
+                </p>
+                <pre>
+                    <code>
+            <span><</span>script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"><span><</span>/script>
+            <span><</span>script defer type="text/javascript" src='bubbl_library/bubbl.js'><span><</span>/script>
+            <span><</span>link rel="stylesheet" type="text/css" href="bubbl_library/bubbl.css"></code>
+                </pre>
+                <p>
+                    In your HTML file, you must use a script tag in order to call any JavaScript file that uses Bubbl.js and its functions. 
+                    An example of the script tag is as follows.
+                </p>
+                <pre>
+                    <code>
+            <span><</span>script defer type="text/javascript" src='examples/example.js'><span><</span>/script></code>
+                </pre>
+
+                <h1>
+                    Usage
+                </h1>
+                <p>
+                    The actual usage of Bubbl.js will be in a JavaScript file of your choosing. 
+                    Here is a quick example that demonstrates the basic usages of Bubbl.js in an example JavaScript file.
+                </p>
+                <pre>
+                    <code>
+            const vidCanvas = new VideoCanvas('block-creator')
+            vidCanvas.addVideo('vid1', 'examples/vids-creator/youtube1.mp4', 'medium', 0.8)
+            vidCanvas.videoLink('vid1', 'https://www.youtube.com/watch?v=qPT-Y00_HlE')</code>
+                </pre>
+
+                <p>
+                    Looks like you’re all set! Check out the home examples page and API documentation 
+                    page to see more of how you can utilize Bubbl.js. Have fun creating!
+                </p>
+
+
+
+
+
+
+            </div>
+        </div>
+    
+    </body>
+
+</html>

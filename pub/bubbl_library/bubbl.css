@@ -1,0 +1,145 @@
+.myId {
+    font-size: 40px;
+}
+
+.video-canvas {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.video-container {
+    position: relative;
+    margin: 15px;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+}
+
+.bubble-bounce {
+    animation-name: bubble-bounce;
+    animation-timing-function: ease;
+}
+
+@keyframes bubble-bounce {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1); }
+    
+      20% {
+        -webkit-transform: scaleY(0.999) scaleX(1.001);
+        transform: scaleY(0.999) scaleX(1.001); }
+    
+      48% {
+        -webkit-transform: scaleY(1.030) scaleX(0.970);
+        transform: scaleY(1.030) scaleX(0.970); }
+    
+      68% {
+        -webkit-transform: scaleY(0.98) scaleX(1.02);
+        transform: scaleY(0.98) scaleX(1.02); }
+    
+      80% {
+        -webkit-transform: scaleY(1.02) scaleX(0.98);
+        transform: scaleY(1.02) scaleX(0.98); }
+    
+      97%, 100% {
+        -webkit-transform: scale(1);
+        transform: scale(1); }
+}
+
+.video-container-full {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85% !important;
+    height: 85% !important;
+    z-index: 4;
+}
+
+.video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0px 0px 6px 2px #b5b5b5;
+    animation: glow 1.5s linear infinite alternate;
+}
+
+@keyframes glow{
+    to {
+      box-shadow: 0px 0px 15px 10px #c9f8ff;
+    }
+  }
+
+.video-full {
+    border-radius: 5%;
+}
+
+.general-button {
+    opacity: 75%;
+    visibility: hidden;
+    z-index: 2;
+}
+
+.mute-button {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 80%;
+    left: 80%;
+    transform: translate(-80%, -80%);
+}
+
+.play-button {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+}
+
+.restart-button {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 80%;
+    left: 55%;
+    transform: translate(-55%, -80%);
+}
+
+.link-button {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.blur-background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    backdrop-filter: blur(8px);
+}
+
+.bubble-foreground {
+    position: absolute;
+    border-radius: 50%;
+    width: 100.5%;
+    height: 100.5%;
+    object-fit: cover;
+    background: radial-gradient(
+        circle at bottom, #81e8f6, #76deef 10%, #0551945a 80%, #062745 100%);
+    opacity: 100%;
+    z-index: 1;
+}
+
+.bubble-foreground:hover{
+    cursor: ne-resize;
+}

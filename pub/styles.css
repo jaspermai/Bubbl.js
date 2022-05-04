@@ -1,0 +1,213 @@
+body {
+    margin: 0;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+#hero-video {
+    height: 100%;
+    min-height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: -1;
+    opacity: 50%;
+}
+
+.hero-main {
+    margin: 30px;
+}
+
+.hero-main-title {
+    font-family: 'Days One', sans-serif;
+    font-size: 120px;
+    font-weight: bold;
+}
+
+.hero-main-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.hero-main-tagline {
+    font-family: 'Inter', sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    color: white;
+    text-shadow: 3px 3px black;
+}
+
+.hero-description {
+    margin: 30px;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    max-width: 60%;
+    text-shadow: 1px 1px white;
+}
+
+.hero-buttons {
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-button {
+    font-family: 'Inter', sans-serif;
+    font-size: 12;
+    font-weight: 600;
+    text-decoration:none;
+    background-color: black;
+    color: white;
+    padding: 10px 30px 10px;
+    margin: 0px 12px;
+    border-radius: 20px;
+}
+
+.hero-button:hover {
+    opacity: 50%;
+}
+
+.hero-buttons img {
+    margin: 0px 12px;
+}
+
+.hero-buttons img:hover {
+    opacity: 50%;
+}
+
+.arrows {
+	width: 60px;
+	height: 72px;
+	position: absolute;
+	left: 50%;
+	margin-left: -30px;
+	bottom: 20px;
+}
+
+.arrows path {
+	stroke: black;
+	fill: transparent;
+	stroke-width: 1px;	
+	animation: arrow 2s infinite;
+	-webkit-animation: arrow 2s infinite; 
+}
+
+@keyframes arrow {
+    0% {opacity:0}
+    40% {opacity:1}
+    80% {opacity:0}
+    100% {opacity:0}
+}
+
+@-webkit-keyframes arrow {
+    0% {opacity:0}
+    40% {opacity:1}
+    80% {opacity:0}
+    100% {opacity:0}
+}
+
+.arrows path.a1 {
+	animation-delay:-1s;
+	-webkit-animation-delay:-1s;
+}
+
+.arrows path.a2 {
+	animation-delay:-0.5s;
+	-webkit-animation-delay:-0.5s;
+}
+
+.arrows path.a3 {	
+	animation-delay:0s;
+	-webkit-animation-delay:0s;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+.block {
+    padding: 80px 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.block-title {
+    font-family: 'Days One', sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.block-description {
+    margin: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    max-width: 90%;
+    text-shadow: 1px 1px white;
+}
+
+pre {
+    color: white;
+    background-color: #afd5e1;
+    border-radius: 20px;
+    margin: 30px 40px 20px 0px;
+}
+
+code {
+    font-size: 15px;
+}
+
+/* ---------------------------------------------------------- */
+
+.documentation {
+    background-color: #E7E7E7;
+    padding: 60px 60px 10px 60px;
+}
+
+.documentation-content {
+    margin: 40px 100px;
+}
+
+h1 {
+    font-family: 'Inter', sans-serif;
+    border-bottom: 2px solid #289e7f;
+}
+
+h2 {
+    font-family: 'Inter', sans-serif;
+}
+
+p {
+    font-family: 'Inter', sans-serif;
+}
+
+table {
+    margin-bottom: 10px;
+}
+
+th, td {
+    font-family: 'Inter', sans-serif;
+    padding: 10px 16px;
+    border-bottom: 1px solid #288c9e;
+    text-align: left;
+}
+
+li {
+    margin: 3px 0px 3px 0px;
+    font-family: 'Inter', sans-serif;
+}
+
+.link:hover {
+    opacity: 50%;
+}
